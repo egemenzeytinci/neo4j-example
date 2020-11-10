@@ -1,6 +1,6 @@
 MATCH (c:Customer)-[r1:MADE]->(t:Transaction)-[r2:CONTAINS]->(:Product)
 WITH SUM(r2.price) AS monetary,
-	 COUNT(t) AS frequency,
+	 COUNT(DISTINCT t) AS frequency,
      c.customerID AS customer,
      MIN(
      	duration.inDays(
