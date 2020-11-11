@@ -5,7 +5,7 @@ CREATE CONSTRAINT ON (customer:Customer) ASSERT customer.customerID IS UNIQUE;
 :auto 
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS
-FROM 'file:///data.csv'
+FROM 'https://git.io/JkIjD'
 AS line
 WITH toInteger(line.CustomerID) AS CustomerID, line WHERE NOT line.CustomerID IS null
 MERGE(customer:Customer {customerID: CustomerID})
@@ -18,7 +18,7 @@ CREATE CONSTRAINT ON (product:Product) ASSERT product.stockCode IS UNIQUE;
 :auto 
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS
-FROM 'file:///data.csv'
+FROM 'https://git.io/JkIjD'
 AS line
 MERGE(product:Product {stockCode: line.StockCode})
 ON CREATE SET product.description = line.Description;
@@ -30,7 +30,7 @@ CREATE CONSTRAINT ON (transaction:Transaction) ASSERT transaction.transactionID 
 :auto 
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS
-FROM 'file:///data.csv'
+FROM 'https://git.io/JkIjD'
 AS line
 MERGE(transaction:Transaction {transactionID: line.InvoiceNo})
 ON CREATE SET transaction.transactionDate = line.InvoiceDate;
@@ -39,7 +39,7 @@ ON CREATE SET transaction.transactionDate = line.InvoiceDate;
 :auto 
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS
-FROM 'file:///data.csv'
+FROM 'https://git.io/JkIjD'
 AS line
 WITH toInteger(line.CustomerID) AS CustomerID, line.InvoiceNo AS InvoiceNo
 MATCH (customer:Customer {customerID: CustomerID})
@@ -50,7 +50,7 @@ MERGE (customer)-[:MADE]->(transaction);
 :auto 
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS
-FROM 'file:///data.csv'
+FROM 'https://git.io/JkIjD'
 AS line
 WITH toInteger(line.Quantity) AS Quantity, toFloat(line.UnitPrice) AS UnitPrice, line.InvoiceNo AS InvoiceNo, line.StockCode AS StockCode
 MATCH (transaction:Transaction {transactionID: InvoiceNo})
