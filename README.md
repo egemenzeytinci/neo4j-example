@@ -1,6 +1,6 @@
 ## Neo4j Example
 
-![graph](/images/graph.jpg)
+![graph](/images/connection.jpg)
 
 In the present study, an example graph was created from e-commerce data using Neo4j, 
 then customer segmentation was made with RFM analysis using this data.
