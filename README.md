@@ -11,7 +11,7 @@ You can follow the instructions [here](https://neo4j.com/docs/operations-manual/
 
 You can find the cypher statements needed to create a example graph in the 
 *insert.cql* file under the *data* folder. 
-In addition, the cypher statement that will get the rfm values from the graph is 
+In addition, the cypher statement that will get the RFM values from the graph is 
 located in the *rfm.cql* file under the same folder.
 
 Finally, all the required packages are in the jupyter notebook file.
