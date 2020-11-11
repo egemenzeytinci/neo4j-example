@@ -2,6 +2,7 @@
 
 ![graph](/images/connection.jpg)
 
+## Description
 In the present study, an example graph was created from e-commerce data using Neo4j, 
 then customer segmentation was made with RFM analysis using this data.
 
